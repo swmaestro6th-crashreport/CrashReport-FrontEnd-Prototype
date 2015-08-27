@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-lg-12 col-sm-12" id="line-chart" ng-controller="ReportCtrl">
+    <div class="panel panel-default">
+      <div class="panel-heading">날짜별 Crash 발생 수</div>
+      <div class="panel-body">
+        <canvas id="line" class="chart chart-line chart-xl" data="line.data" labels="line.labels" legend="true"
+                click="line.onClick" series="line.series"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 col-sm-12" ng-controller="ReportCtrl">
+    <div class="panel panel-default">
+      <div class="panel-heading">Crash 목록</div>
+      <div class="panel-body">
+        <table class="crashTable">
+          <tr>
+            <th>No.</th>
+            <th>Error Message</th>
+            <th>Class Name</th>
+            <th>Method Name</th>
+            <th>File Name</th>
+            <th>Error Line</th>
+            <th>OS Version</th>
+            <th>OS Architecture</th>
+            <th>App Memory Total</th>
+            <th>App Memory Free</th>
+          </tr>
+          <tr ng-repeat="data in crashData">
+            <td style="text-align: center;">{{$index + 1}}</td>
+            <td>{{data.errorMessage}}</td>
+            <td>{{data.className}}</td>
+            <td>{{data.methodName}}</td>
+            <td>{{data.fileName}}</td>
+            <td>{{data.errorLine}}</td>
+            <td>{{data.osVersion}}</td>
+            <td>{{data.osArch}}</td>
+            <td>{{data.appMemTotal}}</td>
+            <td>{{data.appMemFree}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
