@@ -15,12 +15,11 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ui.router',
+    'ngRoute',
     'ngSanitize',
     'ngTouch',
     'chart.js',
     'nvd3ChartDirectives',
-    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
